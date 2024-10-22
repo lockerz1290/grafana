@@ -1,0 +1,58 @@
+{
+  "type": "table",
+  "title": "Method Execution Metrics",
+  "gridPos": {
+    "h": 10,
+    "w": 24,
+    "x": 0,
+    "y": 0
+  },
+  "targets": [
+    {
+      "expr": "sum by (method, class) (method_execution_count)",
+      "refId": "A"
+    },
+    {
+      "expr": "max by (method, class) (method_execution_max)",
+      "refId": "B"
+    },
+    {
+      "expr": "sum by (method, class) (method_execution_sum)",
+      "refId": "C"
+    },
+    {
+      "expr": "sum by (method, class) (method_execution_sum) / sum by (method, class) (method_execution_count)",
+      "refId": "D"
+    }
+  ],
+  "columns": [
+    {
+      "text": "Method",
+      "value": "method",
+      "label": "Method"
+    },
+    {
+      "text": "Class",
+      "value": "class",
+      "label": "Class"
+    },
+    {
+      "text": "Count",
+      "value": "value",
+      "label": "Count",
+      "unit": "short"
+    },
+    {
+      "text": "Max",
+      "value": "value",
+      "label": "Max",
+      "unit": "s"
+    },
+    {
+      "text": "Average",
+      "value": "value",
+      "label": "Average",
+      "unit": "s"
+    }
+  ]
+}
